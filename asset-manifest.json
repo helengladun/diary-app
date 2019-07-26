@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/helengladun/diary-app/static/css/main.f082d14c.chunk.css",
-    "main.js": "/helengladun/diary-app/static/js/main.28bb6795.chunk.js",
-    "main.js.map": "/helengladun/diary-app/static/js/main.28bb6795.chunk.js.map",
-    "runtime~main.js": "/helengladun/diary-app/static/js/runtime~main.8f6e12cb.js",
-    "runtime~main.js.map": "/helengladun/diary-app/static/js/runtime~main.8f6e12cb.js.map",
-    "static/css/2.764ccc25.chunk.css": "/helengladun/diary-app/static/css/2.764ccc25.chunk.css",
-    "static/js/2.8ea2767f.chunk.js": "/helengladun/diary-app/static/js/2.8ea2767f.chunk.js",
-    "static/js/2.8ea2767f.chunk.js.map": "/helengladun/diary-app/static/js/2.8ea2767f.chunk.js.map",
-    "index.html": "/helengladun/diary-app/index.html",
-    "precache-manifest.f4110656bb88bdd8022f32c8b7de1dc6.js": "/helengladun/diary-app/precache-manifest.f4110656bb88bdd8022f32c8b7de1dc6.js",
-    "service-worker.js": "/helengladun/diary-app/service-worker.js",
-    "static/css/2.764ccc25.chunk.css.map": "/helengladun/diary-app/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.f082d14c.chunk.css.map": "/helengladun/diary-app/static/css/main.f082d14c.chunk.css.map"
+    "main.css": "/diary-app/static/css/main.f082d14c.chunk.css",
+    "main.js": "/diary-app/static/js/main.5b5bdf07.chunk.js",
+    "main.js.map": "/diary-app/static/js/main.5b5bdf07.chunk.js.map",
+    "runtime~main.js": "/diary-app/static/js/runtime~main.18bbbb3d.js",
+    "runtime~main.js.map": "/diary-app/static/js/runtime~main.18bbbb3d.js.map",
+    "static/css/2.764ccc25.chunk.css": "/diary-app/static/css/2.764ccc25.chunk.css",
+    "static/js/2.8ea2767f.chunk.js": "/diary-app/static/js/2.8ea2767f.chunk.js",
+    "static/js/2.8ea2767f.chunk.js.map": "/diary-app/static/js/2.8ea2767f.chunk.js.map",
+    "index.html": "/diary-app/index.html",
+    "precache-manifest.f463393e747e17d47cbbd5ad7d753d75.js": "/diary-app/precache-manifest.f463393e747e17d47cbbd5ad7d753d75.js",
+    "service-worker.js": "/diary-app/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/diary-app/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.f082d14c.chunk.css.map": "/diary-app/static/css/main.f082d14c.chunk.css.map"
   }
 }
