@@ -30,7 +30,9 @@
     "test": "react-scripts test",
     "test:coverage": "jest --coverage",
     "test:cache": "react-scripts test --clearCache",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
