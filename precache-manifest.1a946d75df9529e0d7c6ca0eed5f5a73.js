@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "deee4fa0c6373a8c707b793e01f5f91c",
+    "revision": "e4673cc9b1614febad5de55b401804d7",
     "url": "/diary-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/diary-app/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "bc9efe02ebe902ede76d",
+    "revision": "43d7e4bef5709d2616d0",
     "url": "/diary-app/static/css/main.f082d14c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/diary-app/static/js/2.8ea2767f.chunk.js"
   },
   {
-    "revision": "bc9efe02ebe902ede76d",
-    "url": "/diary-app/static/js/main.5b5bdf07.chunk.js"
+    "revision": "43d7e4bef5709d2616d0",
+    "url": "/diary-app/static/js/main.c666e84e.chunk.js"
   },
   {
     "revision": "dc55603d64960c6fc780",
