@@ -100,7 +100,6 @@ class PostsContainer extends Component<IProps, IState> {
     render() {
         const {posts, postComments} = this.props;
 
-        console.log(postComments);
         return (
             <>
                 <div className="posts">
