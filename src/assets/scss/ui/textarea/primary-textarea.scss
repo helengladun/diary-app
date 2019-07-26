@@ -1,0 +1,11 @@
+.primary-textarea {
+  resize: none;
+  max-width: 335px;
+  height: 70px;
+  border: 1px solid $secondaryBorderColor;
+  font-size: 1.6rem;
+
+  &:focus {
+    outline: none;
+  }
+}

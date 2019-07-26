@@ -1,0 +1,11 @@
+export enum CommentsTypes {
+    GET_COMMENTS = '@@comments/GET_COMMENTS',
+    GET_COMMENTS_SUCCESS = '@@comments/GET_COMMENTS_SUCCESS',
+    GET_COMMENTS_FAILURE = '@@comments/GET_COMMENTS_FAILURE',
+    CLEAR_COMMENTS = '@@comments/CLEAR_COMMENTS',
+
+    SAVE_COMMENTS = '@@comments/SAVE_COMMENTS',
+    SAVE_COMMENTS_SUCCESS = '@@comments/SAVE_COMMENTS_SUCCESS',
+    SAVE_COMMENTS_FAILURE = '@@comments/SAVE_COMMENTS_FAILURE',
+
+}

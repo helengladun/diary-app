@@ -1,0 +1,20 @@
+.comments {
+  max-width: 444px;
+  width: 100%;
+  padding: 8px 19px 14px 18px;
+
+  border: 1px solid $primaryBorderColor;
+  background-color: $primaryLightColor;
+  box-sizing: border-box;
+
+  &__content {
+    .comment:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+}

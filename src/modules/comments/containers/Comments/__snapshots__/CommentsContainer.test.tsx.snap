@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommentsContainer test should render CommentsContainer correctly 1`] = `
+<div
+  className="comments"
+>
+  <h2
+    className="comments__title title title_1"
+  >
+    Comments #
+    2
+  </h2>
+  <div
+    className="comments__content"
+  >
+    <Comment
+      data={
+        Object {
+          "description": "Cum habena peregrinatione, omnes parses anhelare flavum, placidus brabeutaes.",
+          "id": 1,
+          "post_id": 2,
+        }
+      }
+      key="1"
+    />
+    <Comment
+      data={
+        Object {
+          "description": "Adgium persuaderes, tanquam raptus cacula. Demissios ire! Solitudo de pius valebat, experientia orexis!",
+          "id": 2,
+          "post_id": 2,
+        }
+      }
+      key="2"
+    />
+    <Comment
+      data={
+        Object {
+          "description": "Cobaltums mori in pius hafnia!",
+          "id": 3,
+          "post_id": 1,
+        }
+      }
+      key="3"
+    />
+  </div>
+  <AddCommentForm
+    changeHandler={[Function]}
+    submitHandler={[Function]}
+    value=""
+  />
+</div>
+`;

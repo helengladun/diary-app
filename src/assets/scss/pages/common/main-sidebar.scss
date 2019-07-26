@@ -1,0 +1,10 @@
+.main-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 271px;
+  width: 271px;
+  background: $primaryDarkColor;
+  height: 100%;
+  padding: 16px 27px;
+  box-sizing: border-box;
+}

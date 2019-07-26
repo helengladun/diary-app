@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component make snapshot 1`] = `
+<aside
+  className="main-sidebar"
+>
+  <h1
+    className="main-title"
+  >
+    Diary app
+  </h1>
+  <div
+    className="main-subtitle"
+  >
+    Comment with no sense
+  </div>
+</aside>
+`;

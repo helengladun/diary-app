@@ -1,0 +1,31 @@
+.comment {
+  padding: 15px 0;
+  border-bottom: 1px solid $primaryBorderColor;
+  display: flex;
+  align-items: center;
+  word-break: break-all;
+
+  &__description {
+    color: $primaryTextColor;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-left: 14px;
+    text-align: left;
+  }
+
+  &__colored-square {
+    flex: 0 0 52px;
+  }
+
+  &:nth-child(2n + 1) {
+    .comment__colored-square {
+      background-color: $primarySquareColor;
+    }
+  }
+
+  &:nth-child(2n) {
+    .comment__colored-square {
+      background-color: $secondarySquareColor;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.main-form {
+  display: flex;
+
+  &_post {
+    margin: 14px 0 7px;
+    align-items: center;
+    height: 37px;
+
+    .btn-ordinary {
+      margin-left: 9px;
+      max-width: 133px;
+      height: 100%;
+    }
+
+    .primary-input {
+      margin-left: 6px;
+      height: 100%;
+    }
+  }
+}

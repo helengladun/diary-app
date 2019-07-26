@@ -1,0 +1,13 @@
+.textarea-box {
+  display: flex;
+
+  &__colored-square {
+    background: $thirdlySquareColor;
+    flex: 0 0 52px;
+  }
+
+  &__textarea {
+    width: 100%;
+    margin-left: 14px;
+  }
+}
