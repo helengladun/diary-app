@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddCommentForm component should render CommentForm correctly 1`] = `
-<form
-  className="textarea-box"
->
-  <div
-    className="square textarea-box__colored-square"
-  />
-  <textarea
-    className="textarea-box__textarea primary-textarea"
-    onChange={[MockFunction]}
-    onKeyUp={[MockFunction]}
-    value="text"
-  />
-</form>
-`;
+exports[`AddCommentForm component should render AddCommentForm correctly 1`] = `ShallowWrapper {}`;

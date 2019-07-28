@@ -1,16 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout component make snapshot 1`] = `
-<div
-  className="layout"
->
-  <Sidebar />
-  <main
-    className="content-container"
-  >
-    <div
-      className="main-content"
-    />
-  </main>
-</div>
-`;
+exports[`Layout component make snapshot 1`] = `ShallowWrapper {}`;

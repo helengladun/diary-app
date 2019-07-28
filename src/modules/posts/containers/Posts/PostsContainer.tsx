@@ -36,7 +36,7 @@ interface IState {
     checkedPostId: number
 }
 
-class PostsContainer extends Component<IProps, IState> {
+export class PostsContainer extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
 
@@ -46,27 +46,17 @@ class PostsContainer extends Component<IProps, IState> {
             checkedPostId: 0
         };
 
+
         this.getPostsList = this.getPostsList.bind(this);
-        this.showComments = this.showComments.bind(this);
         this.choosePostHandler = this.choosePostHandler.bind(this);
         this.changePostHandler = this.changePostHandler.bind(this);
         this.submitPostFormHandler = this.submitPostFormHandler.bind(this);
         this.removePostHandler = this.removePostHandler.bind(this);
     }
 
-    showComments() {
-        this.setState(prevState => ({
-            isCommentsVisible: !prevState.isCommentsVisible
-        }));
-    }
-
     componentDidMount(): void {
         this.props.getPostsEffect();
         this.props.getCommentsEffect();
-    }
-
-    componentWillUnmount(): void {
-        this.setState(() => ({isCommentsVisible: false}));
     }
 
     choosePostHandler(post_id: number) {

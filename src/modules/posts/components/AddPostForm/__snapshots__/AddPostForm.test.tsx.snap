@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCommentForm component should render AddPostForm correctly 1`] = `ShallowWrapper {}`;

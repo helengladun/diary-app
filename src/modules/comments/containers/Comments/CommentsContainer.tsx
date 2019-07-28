@@ -3,10 +3,10 @@ import {isEmpty} from "ramda";
 import {IComment} from "../../../shared/models/IComment";
 import {AddCommentForm} from "../../components/AddCommentForm/AddCommentForm";
 import {Comment} from "../../components/Comment/Comment";
-import uuid from "uuid";
 import {addCommentEffect} from "../../store/all-comments/effects";
 import {connect} from "react-redux";
 import {clearPostComments} from "../../../posts/store/comments/actions";
+import uuid from 'uuid';
 
 interface PropsFromDispatch {
     addCommentEffect: Function,
@@ -51,7 +51,7 @@ export class CommentsContainer extends Component<IProps, IState> {
     submitCommentFormHandler(e: KeyboardEvent<HTMLTextAreaElement>) {
         e.preventDefault();
 
-        if (e.keyCode === 13 && e.ctrlKey) {
+        if (e.which === 13 && e.ctrlKey) {
             this.props.addCommentEffect({
                 id: uuid(),
                 description: this.state.commentText,

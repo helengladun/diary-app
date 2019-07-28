@@ -18,10 +18,6 @@ export class Post extends Component<IProps> {
     constructor(props: IProps) {
         super(props);
 
-        this.state = {
-            isChecked: false
-        };
-
         this.clickHandler = this.clickHandler.bind(this);
         this.removeHandler = this.removeHandler.bind(this);
     }

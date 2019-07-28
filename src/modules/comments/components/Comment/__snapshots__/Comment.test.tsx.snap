@@ -1,16 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comment component should render Comment component correctly 1`] = `
-<div
-  className="comment"
->
-  <div
-    className="square comment__colored-square"
-  />
-  <div
-    className="comment__description"
-  >
-    some text
-  </div>
-</div>
-`;
+exports[`Comment component should render Comment component correctly 1`] = `ShallowWrapper {}`;
