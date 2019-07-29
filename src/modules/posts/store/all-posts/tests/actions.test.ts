@@ -39,7 +39,7 @@ describe('All posts actions', () => {
         };
 
         const action = savePostSuccess(post);
-        expect(action).toEqual(expect.objectContaining({type: PostsTypes.SAVE_POST_SUCCESS, payload: {data: [...posts, post]}}));
+        expect(action).toEqual(expect.objectContaining({type: PostsTypes.SAVE_POST_SUCCESS, payload: {data: post}}));
     });
 
     test('should setup savePostsFailure action object', () => {
@@ -54,9 +54,9 @@ describe('All posts actions', () => {
     });
 
     test('should setup deletePostSuccess action object', () => {
-        const action = deletePostSuccess(posts[0].id);
-        const filteredPosts = posts.filter(item => item.id !== posts[0].id);
-        expect(action).toEqual(expect.objectContaining({type: PostsTypes.DELETE_POST_SUCCESS, payload: {data: filteredPosts}}));
+        const action = deletePostSuccess(1);
+        expect(action.type).toEqual(PostsTypes.DELETE_POST_SUCCESS);
+        expect(action.payload).toEqual({id: 1});
     });
 
     test('should setup deletePostsFailure action object', () => {

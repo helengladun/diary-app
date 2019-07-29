@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Layout from "./modules/shared/components/Layout/Layout";
 import PostsContainer from "./modules/posts/containers/Posts/PostsContainer";
 

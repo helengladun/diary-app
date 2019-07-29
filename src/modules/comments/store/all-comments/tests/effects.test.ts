@@ -1,78 +1,44 @@
 import {addCommentEffect, getCommentsEffect} from '../effects';
 import {CommentsTypes} from '../types';
-import thunk from 'redux-thunk';
-import configureStore from 'redux-mock-store';
-import {comments} from "../../../../shared/fixtures/comments";
 import {CommentService} from "../../../../shared/services/CommentService";
+import {comments} from "../../../../shared/fixtures/comments";
 
-const middlewares = [thunk];
-const mockStore = configureStore(middlewares);
+const dispatch = jest.fn();
+const getState = jest.fn();
+const comment = {id: 10, description: 'new text', post_id: 2};
 
 describe('all comments effects', () => {
-    describe('getCommentsEffect effects', () => {
-        const store = mockStore({});
-        const getCommentsEffectMock = jest.fn(getCommentsEffect);
-
-        beforeEach(() => {
-            store.clearActions();
-        });
-
+    describe('getCommentsEffect effect', () => {
         test('should call success actions after getCommentsEffect',() => {
-            const expectedActions = [
-                {type: CommentsTypes.GET_COMMENTS},
-                {type: CommentsTypes.GET_COMMENTS_SUCCESS, payload: {data: comments}}
-            ];
+            getCommentsEffect()(dispatch, getState);
 
-            store.dispatch(getCommentsEffectMock());
-            expect(store.getActions()).toEqual(expect.objectContaining(expectedActions));
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.GET_COMMENTS});
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.GET_COMMENTS_SUCCESS, payload: {data: comments}});
         });
 
         test('should call failure actions after failure getCommentsEffect',() => {
+            CommentService.getComments = jest.fn(() => {throw new Error('ERROR');});
+            getCommentsEffect()(dispatch, getState);
 
-            const expectedActions = [
-                {type: CommentsTypes.GET_COMMENTS},
-                {type: CommentsTypes.GET_COMMENTS_FAILURE, payload: {message: 'Failed'}}
-            ];
-
-            store.dispatch(getCommentsEffectMock());
-            expect(store.getActions()).toEqual(expect.objectContaining(expectedActions));
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.GET_COMMENTS});
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.GET_COMMENTS_FAILURE, payload: {message: "Error found. Please, try again."}});
         });
     });
 
-    describe('addCommentEffect effects', () => {
-
-        const store = mockStore({});
-        const addCommentEffectMock = jest.fn(addCommentEffect);
-
-        beforeEach(() => {
-            store.clearActions();
-        });
-
+    describe('addCommentEffect effect', () => {
         test('should call success actions after addCommentEffect',() => {
-            const expectedActions = [
-                {type: CommentsTypes.SAVE_COMMENTS},
-                {type: CommentsTypes.SAVE_COMMENTS_SUCCESS, payload: {data: comments[0]}}
-            ];
+            addCommentEffect(comment)(dispatch, getState);
 
-            store.dispatch(addCommentEffectMock(expectedActions));
-            expect(store.getActions()).toEqual(expect.objectContaining(expectedActions));
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.SAVE_COMMENTS});
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.SAVE_COMMENTS_SUCCESS, payload: {data: comment}});
         });
 
         test('should call failure actions after failure addCommentEffect',() => {
+            CommentService.addComment = jest.fn(() => {throw new Error('ERROR');});
+            addCommentEffect(comment)(dispatch, getState);
 
-            jest.mock('../../../../shared/services/CommentService', () => () => ({
-                addComment: () => undefined,
-                getComments: () => {},
-                removeComment: () => {}
-            }));
-
-            const expectedActions = [
-                {type: CommentsTypes.SAVE_COMMENTS},
-                {type: CommentsTypes.SAVE_COMMENTS_FAILURE, payload: {message: 'Failed'}}
-            ];
-
-            store.dispatch(addCommentEffectMock());
-            expect(store.getActions()).toEqual(expect.objectContaining(expectedActions));
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.SAVE_COMMENTS});
+            expect(dispatch).toBeCalledWith({type: CommentsTypes.SAVE_COMMENTS_FAILURE, payload: {message: "Error found. Please, try again."}});
         });
     });
 });

@@ -3,8 +3,11 @@ import {shallow, mount, ShallowWrapper, ReactWrapper} from 'enzyme';
 import {PostsContainer} from "./PostsContainer";
 import {comments} from "../../../shared/fixtures/comments";
 import {posts} from "../../../shared/fixtures/posts";
+import {Post} from "../../components/Post/Post";
+import configureStore from 'redux-mock-store';
 
 jest.mock('uuid', () => jest.fn(() => 234));
+let mockedStore = configureStore([])({});
 
 describe('PostContainer test', () => {
 
@@ -42,7 +45,7 @@ describe('PostContainer test', () => {
             posts={posts}
             comments={comments}
             postComments={[comments[0], comments[1]]}
-        />);
+        />, {context: { store: mockedStore }});
     });
 
     test('should render PostsContainer correctly', () => {
@@ -76,8 +79,10 @@ describe('PostContainer test', () => {
         expect(deletePostEffect).toHaveBeenLastCalledWith(1);
     });
 
-    // test('fire deletePostEffect onDelete item', () => {
-    //     wrapperShallow.dive().find('.post').at(0).simulate('click');
-    //     expect(getPostCommentsEffect).toHaveBeenLastCalledWith(1);
-    // });
+    test('fire deletePostEffect onDelete item', () => {
+        wrapperShallow.find(Post).last().simulate('click');
+        // console.log('here', wrapperMounted.state('isCommentsVisible'));
+        expect(getPostCommentsEffect).toHaveBeenLastCalledWith(1);
+        expect(wrapperShallow.state('isCommentsVisible')).toBeFalsy();
+    });
 });

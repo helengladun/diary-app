@@ -1,3 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PostContainer test should render PostsContainer correctly 1`] = `ShallowWrapper {}`;
+exports[`PostContainer test should render PostsContainer correctly 1`] = `
+<Fragment>
+  <div
+    className="posts"
+  >
+    <h2
+      className="title title_1"
+    >
+      Items
+    </h2>
+    <AddPostForm
+      changeHandler={[Function]}
+      submitHandler={[Function]}
+      value=""
+    />
+    <Post
+      chooseHandler={[Function]}
+      comments_count={1}
+      data={
+        Object {
+          "description": "First item with custom name",
+          "id": 1,
+        }
+      }
+      isChecked={false}
+      key="1"
+      removeHandler={[Function]}
+    />
+    <Post
+      chooseHandler={[Function]}
+      comments_count={2}
+      data={
+        Object {
+          "description": "Second item is active",
+          "id": 2,
+        }
+      }
+      isChecked={false}
+      key="2"
+      removeHandler={[Function]}
+    />
+  </div>
+</Fragment>
+`;

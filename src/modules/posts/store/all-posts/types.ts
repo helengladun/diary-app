@@ -9,7 +9,7 @@ export enum PostsTypes {
 
     DELETE_POST = '@@posts/DELETE_POST',
     DELETE_POST_SUCCESS = '@@posts/DELETE_POST_SUCCESS',
-    DELETE_POST_FAILURE = '@@posts/DELETE_POST_SUCCESS',
+    DELETE_POST_FAILURE = '@@posts/DELETE_POST_FAILUREu',
 
     CLEAR_POSTS = '@@posts/CLEAR_POSTS',
 }

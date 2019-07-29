@@ -1,5 +1,4 @@
 import {getPostComments, getPostCommentsSuccess, getPostCommentsFailure, clearPostComments} from "../actions";
-import {posts} from "../../../../shared/fixtures/posts";
 import {PostCommentsTypes} from "../types";
 import {comments} from "../../../../shared/fixtures/comments";
 
