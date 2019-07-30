@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Post component should render Post component correctly 1`] = `ShallowWrapper {}`;
+exports[`Post component should render Post component correctly 1`] = `
+<div
+  className="post"
+  onClick={[Function]}
+>
+  <div
+    className="post__inner"
+  >
+    <div
+      className="post__title-box"
+    >
+      <h3
+        className="post__title title"
+      >
+        some post
+      </h3>
+      <span
+        className="post__comment-count"
+      >
+        10
+      </span>
+    </div>
+    <button
+      className="post__remove-btn btn-ordinary btn-ordinary_remove"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
+</div>
+`;

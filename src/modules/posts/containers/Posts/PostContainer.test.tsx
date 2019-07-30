@@ -3,11 +3,16 @@ import {shallow, mount, ShallowWrapper, ReactWrapper} from 'enzyme';
 import {PostsContainer} from "./PostsContainer";
 import {comments} from "../../../shared/fixtures/comments";
 import {posts} from "../../../shared/fixtures/posts";
-import {Post} from "../../components/Post/Post";
 import configureStore from 'redux-mock-store';
+import {Post} from "../../components/Post/Post";
 
 jest.mock('uuid', () => jest.fn(() => 234));
+
 let mockedStore = configureStore([])({});
+
+jest.mock('../../../comments/containers/Comments/CommentsContainer', () => ()=> <div id="mockCommentsContainer">
+    mockCommentsContainer
+</div>);
 
 describe('PostContainer test', () => {
 
@@ -52,7 +57,7 @@ describe('PostContainer test', () => {
         expect(wrapperShallow).toMatchSnapshot();
     });
 
-    test('set getPostsEffect, getCommentsEffect to false  on componentDidMount', () => {
+    test('fire getPostsEffect, getCommentsEffect on componentDidMount', () => {
         expect(getCommentsEffect).toHaveBeenCalled();
         expect(getPostsEffect).toHaveBeenCalled();
     });
@@ -68,6 +73,8 @@ describe('PostContainer test', () => {
             preventDefault: () => {}
         });
 
+        expect(wrapperMounted.state('postText')).toBe('');
+
         expect(addPostEffect).toHaveBeenLastCalledWith({
             id: 234,
             description: value
@@ -77,12 +84,25 @@ describe('PostContainer test', () => {
     test('fire deletePostEffect on click remove button on post', () => {
         wrapperMounted.find('button.post__remove-btn').at(0).simulate('click');
         expect(deletePostEffect).toHaveBeenLastCalledWith(1);
+        expect(wrapperMounted.state('isCommentsVisible')).toBeFalsy();
     });
 
-    test('fire deletePostEffect onDelete item', () => {
-        wrapperShallow.find(Post).last().simulate('click');
-        // console.log('here', wrapperMounted.state('isCommentsVisible'));
+    test('fire getPostCommentsEffect on click item', () => {
+        wrapperMounted.find('.post').at(0).simulate('click');
         expect(getPostCommentsEffect).toHaveBeenLastCalledWith(1);
-        expect(wrapperShallow.state('isCommentsVisible')).toBeFalsy();
+        expect(wrapperMounted.state('isCommentsVisible')).toBeTruthy();
+    });
+
+    test('set postText onChange input', () => {
+        const value = 'some text';
+        wrapperMounted.find('input').simulate('change', {
+            target: {value}
+        });
+
+        expect(wrapperMounted.state('postText')).toBe(value);
+    });
+
+    test('renders posts', () => {
+        expect(wrapperShallow.find(Post)).toHaveLength(2);
     });
 });

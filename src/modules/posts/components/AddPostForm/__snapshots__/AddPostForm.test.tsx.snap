@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddCommentForm component should render AddPostForm correctly 1`] = `ShallowWrapper {}`;
+exports[`AddCommentForm component should render AddPostForm correctly 1`] = `
+<form
+  className="main-form main-form_post"
+  onSubmit={[MockFunction]}
+>
+  <input
+    className="primary-input"
+    onChange={[MockFunction]}
+    placeholder="Type name here..."
+    type="text"
+    value="text"
+  />
+  <button
+    className="btn-ordinary"
+  >
+    <span
+      className="btn-ordinary__text"
+    >
+      Add new
+    </span>
+  </button>
+</form>
+`;
