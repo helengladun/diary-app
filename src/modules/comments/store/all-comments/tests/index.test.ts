@@ -9,7 +9,7 @@ describe('all comments reducer tests', () => {
     });
 
     test('should set pending to true', () => {
-        const action = {type: CommentsTypes.GET_COMMENTS,};
+        const action = {type: CommentsTypes.GET_COMMENTS};
         const state = allCommentsReducer(undefined, action);
         expect(state).toEqual({entity: [], message: '', pending: true});
     });
